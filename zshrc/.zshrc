@@ -5,7 +5,18 @@
 # (don't mess with these directly, just overwrite them here!)
 
 autoload -Uz compinit
-compinit
+if [[ -z $(find ~/.zcompdump -mmin -1440 2>/dev/null) ]]; then
+  compinit
+else
+  compinit -C
+fi
+
+if [[ ! -s ~/.cache/zsh_init.zsh ]]; then
+    mkdir -p ~/.cache
+    starship init zsh > ~/.cache/zsh_init.zsh
+    zoxide init zsh >> ~/.cache/zsh_init.zsh
+fi
+source ~/.cache/zsh_init.zsh
 
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -28,9 +39,9 @@ function y() {
 }
 
 # convenient aliases
+alias c="z" #zoxide
 alias diff="diff --color=auto" #color diff default
 alias del="rm -ri" #recursive(child directories) interactive(confirmation)
-alias mv="mv -i" #interactive(confirm overwrite)
 alias nv="nvim" #shortcut
 alias df='df -h' #disc space human readable
 alias free='free -m' #ram
@@ -46,12 +57,11 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always {}'" #launch fuzzy 
 alias fuck="sudo pacman -Rs" #uninstall
 alias install="sudo pacman -S"
 alias audio="alsamixer" #shortcut
-alias nvzsh="nv ~/dotfiles/zshrc/.zshrc" # Updated this to point to zshrc
+alias nvzsh="z zshrc | nv .zshrc" # Updated this to point to zshrc
 alias se="rg -S -. -C 2"  #search whith rip grep
-
 alias drives='lsblk' #shortcut
-
 alias spotdl='spotify-dl -t 4' #default 4 parrallel downloads 
+
 # Git Aliases
 alias gpush="git push"
 alias gpull="git pull --prune"
@@ -63,6 +73,9 @@ alias lgit="lazygit"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+
 export PATH=$PATH:/home/lucho/.spicetify
 
 fastfetch
+
+

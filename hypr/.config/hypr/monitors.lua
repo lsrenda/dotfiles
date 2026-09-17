@@ -21,3 +21,11 @@ hl.monitor({ output = "*", mode = "1920x1080@180", position = "auto", scale = "a
 -- Example for Framework 13 w/ 6K XDR Apple display
 -- hl.monitor({ output = "DP-5", mode = "6016x3384@60", position = "auto", scale = 2 })
 -- hl.monitor({ output = "eDP-1", mode = "2880x1920@120", position = "auto", scale = 2 })
+
+hl.window_rule({
+  match = {
+    title = "^(Picture-in%-Picture)$"
+  },
+  float = true,
+  pin = true
+})

@@ -1,6 +1,8 @@
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ -o interactive ]] || return
 
+fpath=($HOME/completion_zsh $fpath)
+
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 
@@ -50,6 +52,9 @@ alias ll="eza -lh --icons --git"
 alias la="eza -lah --icons --git"
 alias cat="bat" #change cat for more modern and advanced
 alias mkd="mkdir -p" #shortcut
+mkcd() {
+  mkdir -p "$1" && cd "$1"
+}
 alias cl="clear" #shortcut
 alias cd="z" #change for feature rich and modern
 alias find="fd -H" #change for feature rich and modern
@@ -57,7 +62,7 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always {}'" #launch fuzzy 
 alias fuck="sudo pacman -Rs" #uninstall
 alias install="sudo pacman -S"
 alias audio="alsamixer" #shortcut
-alias nvzsh="z zshrc | nv .zshrc" # Updated this to point to zshrc
+alias nvzsh="nv ~/.zshrc" # Updated this to point to zshrc
 alias se="rg -S -. -C 2"  #search whith rip grep
 alias drives='lsblk' #shortcut
 alias spotdl='spotify-dl -t 4' #default 4 parrallel downloads 

@@ -3,22 +3,26 @@
 -- https://wiki.hyprland.org/Configuring/Variables/#general
 -- https://wiki.hyprland.org/Configuring/Variables/#decoration
 hl.config({
-    general = {
-        gaps_in = 2,
-        gaps_out = 4,
-        border_size = 2,
+  general = {
+    gaps_in = 2,
+    gaps_out = 4,
+    border_size = 2,
 
-        -- Change to niri-like side-scrolling layout
-        -- layout = "scrolling",
-    },
-    decoration = {
-        -- Use round window corners
-        rounding = 12,
+    -- Change to niri-like side-scrolling layout
+    -- layout = "scrolling",
+  },
+  decoration = {
+    -- Use round window corners
+    rounding = 12,
 
-        -- Dim unfocused windows (0.0 = no dim, 1.0 = fully dimmed)
-        dim_inactive = true,
-        dim_strength = 0.0,
-    },
+    -- Dim unfocused windows (0.0 = no dim, 1.0 = fully dimmed)
+    dim_inactive = true,
+    dim_strength = 0.0,
+
+
+    inactive_opacity = 0.99,
+    active_opacity = 1,
+  },
 })
 
 -- https://wiki.hyprland.org/Configuring/Variables/#animations

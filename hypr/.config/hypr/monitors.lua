@@ -8,7 +8,10 @@
 
 -- output = "*" mirrors the classic `monitor=,...` fallback (matches any monitor
 -- not covered by a more specific hl.monitor() call)
-hl.monitor({ output = "*", mode = "1920x1080@180", position = "auto", scale = "auto" })
+
+hl.monitor({ output = "DP-2", mode = "1920x1080@180.00", position = "auto", scale = 1 })
+
+hl.monitor({ output = "*", mode = "1920x1080@180.00", position = "auto", scale = 1 })
 
 -- Good compromise for 27" or 32" 4K monitors (but fractional!)
 -- hl.env("GDK_SCALE", "1.75")

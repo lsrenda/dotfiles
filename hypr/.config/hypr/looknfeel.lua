@@ -1,5 +1,4 @@
 -- Change the default Omarchy look'n'feel
-
 -- https://wiki.hyprland.org/Configuring/Variables/#general
 -- https://wiki.hyprland.org/Configuring/Variables/#decoration
 hl.config({
@@ -16,14 +15,16 @@ hl.config({
     rounding = 12,
 
     -- Dim unfocused windows (0.0 = no dim, 1.0 = fully dimmed)
-    dim_inactive = true,
+    dim_inactive = false,
     dim_strength = 0.0,
 
 
-    inactive_opacity = 0.99,
-    active_opacity = 1,
+    inactive_opacity = 1.00,
+    active_opacity = 1.00,
   },
 })
+
+o.window(".*", { opacity = "1 0.995" })
 
 -- https://wiki.hyprland.org/Configuring/Variables/#animations
 -- Disable all animations

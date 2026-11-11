@@ -11,13 +11,13 @@
 -- hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd('omarchy-launch-webapp "https://chatgpt.com"'), { description = "ChatGPT" })
 -- hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("alacritty -e ssh your-server"))
 
-
--- Replace mako with swaync
-hl.unbind("SUPER + COMMA")
-hl.unbind("SUPER + ALT + COMMA")
-hl.unbind("SUPER + CTRL + COMMA")
-hl.unbind("SUPER + SHIFT + COMMA")
-hl.unbind("SUPER + SHIFT + ALT + COMMA")
+--
+-- -- Replace mako with swaync
+-- hl.unbind("SUPER + COMMA")
+-- hl.unbind("SUPER + ALT + COMMA")
+-- hl.unbind("SUPER + CTRL + COMMA")
+-- hl.unbind("SUPER + SHIFT + COMMA")
+-- hl.unbind("SUPER + SHIFT + ALT + COMMA")
 
 hl.bind("SUPER + N", hl.dsp.exec_cmd("swaync-client -t -sw"), { description = "Open Swaync" })
 hl.bind("SUPER + COMMA", hl.dsp.exec_cmd("swaync-client -C"), { description = "Dismiss last notification" })

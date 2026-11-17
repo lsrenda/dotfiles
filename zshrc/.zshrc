@@ -72,7 +72,7 @@ alias gpush="git push"
 alias gpull="git pull --prune"
 alias gc="git commit -m"
 alias ga="git add ."
-alias gdiff ="git diff"
+alias gdiff="git diff"
 alias fixgit-to-ssh='git remote set-url origin git@github.com:$(git remote get-url origin | sed "s/.*github.com[\/:]//;s/\.git$//").git'
 alias lgit="lazygit"
 

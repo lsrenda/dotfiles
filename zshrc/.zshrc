@@ -56,7 +56,6 @@ mkcd() {
   mkdir -p "$1" && cd "$1"
 }
 alias cl="clear" #shortcut
-alias cd="z" #change for feature rich and modern
 alias find="fd -H" #change for feature rich and modern
 alias fzf="fzf --preview 'bat --style=numbers --color=always {}'" #launch fuzzy finder
 alias fuck="sudo pacman -Rs" #uninstall
@@ -83,3 +82,10 @@ eval "$(zoxide init zsh)"
 export PATH=$PATH:/home/lucho/.spicetify
 
 alias arduino-ide='arduino-ide --ozone-platform=x11'
+
+# temporal rasp berry
+alias rasperry="ssh lucho@192.168.100.163"
+
+help(){
+  "$@" --help 2>&1 | bat -pl help
+}
